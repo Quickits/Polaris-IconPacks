@@ -1,9 +1,11 @@
 package cn.quickits.polaris.iconpacks.core;
 
+import android.net.Uri;
+
 public interface IconPacksEngine {
 
-    String getFolderIcon();
+    Uri getFolderIcon();
 
-    String getFileExtensionIcon(String extension);
+    Uri getFileExtensionIcon(String extension);
 
 }

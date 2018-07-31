@@ -1,12 +1,35 @@
-apply plugin: 'java-library'
+apply plugin: "com.android.library"
 
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: "kotlin-android"
 
-group='cn.Quickits.Polaris-IconPacks'
+apply plugin: "com.github.dcendents.android-maven"
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+group = "cn.quickits.Polaris-IconPacks"
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
 }
 
-sourceCompatibility = "1.6"
-targetCompatibility = "1.6"
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
